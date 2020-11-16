@@ -5,6 +5,8 @@ let ctx = wx.createCanvasContext('canvas');
 let lineWidth = 1;
 let that = null;
 let strokeStyle = "rgba(255,255,255,1)"; //线的颜色
+
+
 Page({
 
   /**
@@ -129,6 +131,10 @@ Page({
     windowObj: {}, //屏幕信息
     cavansWidth: "", //
     cavansHeight: "", //
+
+
+    cavansTextWidth: 750, //文字canvas的宽度
+    cavansTextHeight: 1447, //文字canvas的高度
   },
 
   /**
@@ -139,6 +145,7 @@ Page({
     that = this;
 
     this.get_window_scale();
+
   },
 
   /**
@@ -146,6 +153,9 @@ Page({
    */
   onReady: function () {
     canvasSet();
+
+    // this.drawCanvas();
+
   },
 
   /**
@@ -323,8 +333,33 @@ Page({
 
 
   // 划文字
-  drawCanvas(){
-    
+  drawCanvas() {
+    var ctx = wx.createCanvasContext('canvas-demo');
+    ctx.rotate(20 * Math.PI / 180)
+    ctx.setFontSize(20)
+    ctx.fillText('Hello', 120, 120)
+    ctx.draw();
+    wx.canvasToTempFilePath({
+      x: 0,
+      y: 0,
+      width: 750,
+      height: 1447,
+      destWidth: 750,
+      destHeight: 1447,
+      fileType: 'jpg',
+      canvasId: 'canvas-demo',
+      success: (res) => {
+        console.log('res: ', res);
+        this.setData({
+          result_text_img: res.tempFilePath
+        })
+
+        // wx.saveImageToPhotosAlbum({
+        //   filePath: res.tempFilePath,
+        // })
+      }
+    })
+
   },
 
 

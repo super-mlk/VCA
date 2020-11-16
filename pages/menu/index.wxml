@@ -81,5 +81,7 @@
 
 
 <!-- 划文字的 -->
+<canvas disable-scroll='true' style='width:{{cavansWidth}}px;height:{{cavansHeight}}px;position: fixed;left:100000rpx;pointer-events: none;' canvas-id="canvas-demo"></canvas>
 
-<!-- <canvas id=""></canvas> -->
+
+<!-- <image src="{{result_text_img}}" class="result_text_img"/> -->

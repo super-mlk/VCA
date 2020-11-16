@@ -167,6 +167,7 @@ i {
   bottom: 0;
   margin: auto;
   z-index: 4;
+  transform: rotate(-20deg);
 }
 .container .take_box .text_box .textarea {
   width: 442rpx;
@@ -174,7 +175,7 @@ i {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(120deg);
+  transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
   font-size: 36rpx;
@@ -238,4 +239,12 @@ i {
   top: 0;
   left: 0;
   z-index: 2;
+}
+.result_text_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999999999;
 }
