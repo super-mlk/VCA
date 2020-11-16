@@ -1,0 +1,18 @@
+<import src="/pages/temp/temp.wxml" />
+<!-- 顶级view的class name默认article -->
+<view class="article" catchtouchmove="true">
+    <!----section begin----->
+    <!-- commonTop s-->
+    <!-- commonTop e-->
+    <view class='content'>
+        我是内页
+
+
+    </view>
+    <!----section end----->
+    <!----bgm button----->
+    <template is="audio" data="{{bgmPlay}}" />
+</view>
+<!----article end----->
+<auth showAuth="{{showAuth}}" getInfo="{{getInfo}}" bind:cancle="onAuthCancle"  bind:sure="onAuthSure"  id="auth" userinfo="{{userinfo}}"></auth>
+ 

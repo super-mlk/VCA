@@ -1,0 +1,25 @@
+<view class="container animated fadeIn">
+  <view class="logo"></view>
+
+  <!-- 中间内容部分 -->
+  <view class="text"></view>
+
+  <!-- 蝴蝶 -->
+  <view class="butterfly"></view>
+
+
+  <!-- 开启幸运之旅 -->
+
+
+  <view class="luck">
+      <!-- 蝴蝶 -->
+      <view class="butterfly2"></view>
+      <!-- 授权 -->
+      <button open-type="getUserInfo" class="auth" bindgetuserinfo="bindgetuserinfo"></button>
+
+  </view>
+
+  <!-- 我的幸运时刻 -->
+  <view class="my_luck"></view>
+
+</view>

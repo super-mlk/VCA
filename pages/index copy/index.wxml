@@ -1,0 +1,17 @@
+<import src="/pages/temp/temp.wxml" />
+<!-- 顶级view的class name默认article -->
+<view class="article" catchtouchmove="true">
+  <!----section begin----->
+  <!-- commonTop s-->
+  <commonTop has-userinfo="{{hasUserInfo}}" avatar-url="{{userInfo.avatarUrl}}" nick-name="{{userInfo.nickName}}"></commonTop>
+  <!-- commonTop e-->
+  <view class='content'>
+    <view class='btn1' catchtap="next">判断授权后进入下一页</view>
+  </view>
+  <!----section end----->
+  <!----bgm button----->
+  <template is="audio" data="{{bgmPlay}}" />
+ 
+</view>
+<auth showAuth="{{showAuth}}" getInfo="{{getInfo}}" bind:cancle="onAuthCancle"  bind:sure="onAuthSure"  id="auth" userinfo="{{userinfo}}"></auth>
+<!----article end----->

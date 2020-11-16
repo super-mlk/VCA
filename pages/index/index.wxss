@@ -1,0 +1,150 @@
+.smallFontSize {
+  font-size: 20rpx;
+}
+.chuiCenter {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.flexVerHorizontally {
+  display: flex;
+  align-items: center;
+}
+.flexHVCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+i {
+  display: block;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.hideop {
+  opacity: 0;
+}
+.showop {
+  opacity: 1;
+}
+/* 动画 */
+.ani_light_after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, #ffefb1 20%, rgba(255, 255, 255, 0) 20%);
+  animation: ani_light 3s ease-in-out infinite;
+}
+@keyframes ani_light {
+  0% {
+    transform: skew(-45deg) translate(-100%, 0);
+  }
+  100% {
+    transform: skew(-45deg) translate(100%, 0);
+    opacity: 0.5;
+  }
+}
+.ani_shake {
+  animation: shake1 1s linear infinite alternate;
+}
+@keyframes shake1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url("http://192.168.0.106:8080/images/index/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: 1rpx;
+}
+.container .logo {
+  width: 100%;
+  height: 98rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/logo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin-top: 75rpx;
+}
+.container .text {
+  width: 100%;
+  height: 376rpx;
+  margin-top: 218rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/text.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.container .butterfly {
+  width: 113rpx;
+  height: 69rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/butterfly.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  top: 246rpx;
+  left: 502rpx;
+}
+.container .luck {
+  width: 368rpx;
+  height: 78rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/b1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 122rpx auto 0;
+  position: relative;
+}
+.container .luck .butterfly2 {
+  width: 117rpx;
+  height: 91rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/butterfly2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  top: -38rpx;
+  left: -64rpx;
+}
+.container .luck .auth {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .my_luck {
+  width: 368rpx;
+  height: 78rpx;
+  background-image: url("http://192.168.0.106:8080/images/index/b2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 38rpx auto 0;
+}

@@ -1,0 +1,5 @@
+<template name="audio">
+     <view class='bgmBtn {{bgmPlay}}' catchtap='bgmClick'>
+        <image src='/images/common/bgm_on.png'></image>
+      </view>
+</template>

@@ -1,0 +1,192 @@
+.smallFontSize {
+  font-size: 20rpx;
+}
+.chuiCenter {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.flexVerHorizontally {
+  display: flex;
+  align-items: center;
+}
+.flexHVCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+i {
+  display: block;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.hideop {
+  opacity: 0;
+}
+.showop {
+  opacity: 1;
+}
+/* 动画 */
+.ani_light_after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, #ffefb1 20%, rgba(255, 255, 255, 0) 20%);
+  animation: ani_light 3s ease-in-out infinite;
+}
+@keyframes ani_light {
+  0% {
+    transform: skew(-45deg) translate(-100%, 0);
+  }
+  100% {
+    transform: skew(-45deg) translate(100%, 0);
+    opacity: 0.5;
+  }
+}
+.ani_shake {
+  animation: shake1 1s linear infinite alternate;
+}
+@keyframes shake1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 1rpx;
+  overflow: hidden;
+}
+.container .take_box {
+  width: 100%;
+  height: calc(100% - 258rpx);
+}
+.container .take_box .camera {
+  width: 100%;
+  height: 100%;
+}
+.container .take_box .camera .logo {
+  width: 100%;
+  height: 98rpx;
+  position: absolute;
+  top: 74rpx;
+  left: 0;
+}
+.container .take_box .camera .logo .logo_img {
+  width: 100%;
+  height: 100%;
+}
+.container .take_box .camera .ccd {
+  width: 56rpx;
+  height: 49rpx;
+  position: absolute;
+  top: 166rpx;
+  right: 36rpx;
+  z-index: 9;
+}
+.container .take_box .camera .ccd .ccd_img {
+  width: 56rpx;
+  height: 49rpx;
+}
+.container .take_box .camera .photo_frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.container .take_box .camera .photo_frame .photo_frame_img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+}
+.container .take_box .camera_img {
+  width: 100%;
+  height: 100%;
+}
+.container .bottom_menu {
+  width: 100%;
+  height: 258rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .bottom_menu .upload_img {
+  width: 106rpx;
+  height: 105rpx;
+  background-image: url("http://192.168.0.106:8080/images/camera/upload.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  top: 50%;
+  left: 24rpx;
+  transform: translateY(-50%);
+}
+.container .bottom_menu .change_photo_frame {
+  width: 158rpx;
+  height: 158rpx;
+  transform: scale(0.9);
+}
+.container .bottom_menu .change_photo_frame.change_photo_frame_active {
+  transform: scale(1.1);
+  animation: fadeIn 0.5s linear alternate;
+}
+.container .bottom_menu .change_photo_frame.change_photo_frame_no_active {
+  transform: scale(0.9);
+}
+.container .bottom_menu .reset {
+  width: 50%;
+  height: 100%;
+  background: red;
+}
+.container .bottom_menu .next {
+  width: 50%;
+  height: 100%;
+  background: yellow;
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  background-position: bottom center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.mask .mask_img {
+  width: 100%;
+  height: 100%;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

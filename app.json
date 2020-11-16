@@ -1,0 +1,27 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/home/home",
+        "pages/takePhoto/index",
+        "pages/menu/index",
+        "pages/template/index"
+    ],
+    "window":
+    {
+        "navigationStyle": "default",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "测试",
+        "navigationBarTextStyle": "black"
+    },
+    "navigateToMiniProgramAppIdList": [
+        "wxd4ce61a2d6a1afab",
+        "wxd4ce61a2d6a1afab",
+        "wx240696d46c9671d7"
+    ],
+     "usingComponents":{
+         "auth": "/components/auth/auth"
+    },
+   
+    "sitemapLocation": "sitemap.json"
+}

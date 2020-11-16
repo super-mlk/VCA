@@ -1,0 +1,62 @@
+@import "../../common/less/mlk_custom.less";
+
+.container {
+  .wh(100%, 100%);
+  .background("index/bg.jpg");
+  padding-top: 1rpx; //解决父元素被子元素margin顶下来
+
+  // logo
+  .logo {
+    .wh(100%, 98rpx);
+    .background("index/logo.png");
+    margin-top: 75rpx;
+  }
+
+  // 中间内容部分
+  .text {
+    .wh(100%, 376rpx);
+    margin-top: 218rpx;
+    .background("index/text.png");
+  }
+
+
+  // 蝴蝶
+  .butterfly {
+    .wh(113rpx, 69rpx);
+    .background("index/butterfly.png");
+    .position(246rpx, 502rpx);
+  }
+
+  // 开启幸运之旅
+  .luck {
+    .wh(368rpx, 78rpx);
+    .background("index/b1.png");
+    margin: 122rpx auto 0;
+    position: relative;
+
+    // 蝴蝶
+    .butterfly2 {
+      .wh(117rpx, 91rpx);
+      .background("index/butterfly2.png");
+      position: absolute;
+      top: -38rpx;
+      left: -64rpx;
+    }
+
+    // 授权
+    .auth{
+      .wh(100%,100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  // 我的幸运时刻
+  .my_luck {
+    .wh(368rpx, 78rpx);
+    .background("index/b2.png");
+    margin: 38rpx auto 0;
+  }
+
+}

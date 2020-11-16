@@ -1,0 +1,85 @@
+<!--pages/template/index.wxml-->
+<view class="container animated fadeIn">
+  <view class="take_box">
+    <image src="/images/menu/test.jpg" class="result_img" />
+
+    <!-- 滤镜 -->
+    <image src="{{filterImg}}" class="filterImg" />
+
+    <!-- 四个操作 -->
+    <cover-view class="menus animated fadeIn" wx:if="{{!maskFlag}}">
+      <block wx:for="{{4}}" wx:key="index">
+        <cover-image src="/images/menu/i{{index+1}}.png" class="menus_img menus_img{{index+1}}" data-id="{{index+1}}"
+          catchtap="menusBtn"></cover-image>
+      </block>
+    </cover-view>
+
+
+    <!-- 色板 -->
+    <view class="paint paint1 animated fadeIn" wx:if="{{three_menus_id == 2}}">
+      <block wx:for="{{paintList}}" wx:key="index">
+        <view class="paint_color" data-color="{{item.color}}" catchtap="paint_btn"></view>
+      </block>
+    </view>
+
+    <!-- 大小 -->
+    <view class="paint paint2 animated fadeIn" wx:if="{{three_menus_id == 3}}">
+      <view class="body-view">
+        <slider bindchanging="sliderchange" bindchange="sliderchange" min="10" max="100" step="10"
+          backgroundColor="#555847" activeColor="#555847" block-color="#555847" block-size="16" value="{{lineInfo}}" />
+      </view>
+
+      <view class="lineInfo">{{lineInfo}}%</view>
+    </view>
+
+
+    <!-- 画图的canvas -->
+    <canvas id='canvas' canvas-id='canvas' disable-scroll='true' bindtouchstart='canvasTouchstart'
+      bindtouchmove='canvasTouchmove' bindtouchend='canvasTouchend' wx:if="{{canvasFlag}}"></canvas>
+
+
+    <!-- 画图画出来的图片 -->
+    <image src="{{paintImg}}" wx:if="{{paintImgFlag}}" class="paintImg" mode="widthFix" />
+
+
+    <!-- 文字 -->
+    <view class="text_box">
+      <textarea class="textarea" maxlength="8" placeholder="点击输入文字" placeholder-class="textarea_placeholder" auto-focus auto-height="true" bindfocus="bindfocus"></textarea>
+    </view>
+
+
+  </view>
+
+  <!-- 底部操作栏 -->
+  <!-- 过滤 -->
+  <view class="bottom_menu animated fadeIn" wx:if="{{menusId == 1}}">
+    <block wx:for="{{filterList}}" wx:key="index">
+      <view class="filter_box" catchtap="getFiltersBtn" data-id="{{item.id}}">
+        <image src="{{item.img}}" class="filter_img" />
+        <view class="filter_name">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class="bottom_menu animated fadeIn" wx:if="{{menusId == 2}}">
+    <block wx:for="{{threeMenus}}" wx:key="index">
+      <view class="three_menus_box" data-id="{{item.id}}" catchtap="threeMenusBtn">
+        <image src="{{item.img}}" class="three_menus_img"></image>
+        <view class="three_menus_name">
+          {{item.name}}
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
+<!-- 提示 -->
+<view class="mask" wx:if="{{maskFlag}}" catchtap="hideTip"></view>
+
+
+
+<!-- 划文字的 -->
+
+<!-- <canvas id=""></canvas> -->

@@ -1,0 +1,26 @@
+<!--components/commonTop.wxml-->
+<view class='auth {{getInfo}}'  wx:if="{{showAuth}}" catchtouchmove="true" >
+    <view class="cont">
+        <view class="closeAuth"  hover-class="noPointer" hover-stay-time="1000" catchtap="cancle"></view>
+        <view class="txtBox">
+            <view class="tit">提示</view>
+            <text class="txt txt1">该小程序需要获取您的昵称和头像,\n请您允许该小程序访问您的个人信息。</text>
+            <text class="txt txt2">该小程序需要获取您的手机号码,\n请您允许该小程序访问您的个人信息。</text>
+        </view>
+        <view class="btnbox flex">
+        	<view class="item">
+        		<view class='authBtn cancle' hover-class="noPointer" hover-stay-time="1000" catchtap="cancle">
+		            <text class="btn1txt">取消</text>
+		        </view>
+        	</view>
+        	<view class="item">
+        		<button class='authBtn btnNumber' open-type="getPhoneNumber" bindgetphonenumber="getAuth" data-auth='getPhoneNumber'>
+		            <text class="btn1txt">确定</text>
+		        </button>
+		        <button class='authBtn btnAuth' open-type="getUserInfo" lang="zh_CN"  bindgetuserinfo="getAuth" data-auth='getUserInfo'>
+		            <text class="btn1txt">确定</text>
+		        </button>
+        	</view>
+        </view>
+    </view>
+</view>

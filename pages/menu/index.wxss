@@ -1,0 +1,241 @@
+.smallFontSize {
+  font-size: 20rpx;
+}
+.chuiCenter {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.flexVerHorizontally {
+  display: flex;
+  align-items: center;
+}
+.flexHVCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grayscale {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+i {
+  display: block;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.hideop {
+  opacity: 0;
+}
+.showop {
+  opacity: 1;
+}
+/* 动画 */
+.ani_light_after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0, #ffefb1 20%, rgba(255, 255, 255, 0) 20%);
+  animation: ani_light 3s ease-in-out infinite;
+}
+@keyframes ani_light {
+  0% {
+    transform: skew(-45deg) translate(-100%, 0);
+  }
+  100% {
+    transform: skew(-45deg) translate(100%, 0);
+    opacity: 0.5;
+  }
+}
+.ani_shake {
+  animation: shake1 1s linear infinite alternate;
+}
+@keyframes shake1 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 1rpx;
+}
+.container .take_box {
+  width: 100%;
+  height: calc(100% - 258rpx);
+}
+.container .take_box .result_img {
+  width: 100%;
+  height: 100%;
+}
+.container .take_box .filterImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.container .take_box .menus {
+  width: 50rpx;
+  height: auto;
+  position: absolute;
+  top: 172rpx;
+  right: 30rpx;
+  z-index: 999;
+}
+.container .take_box .menus .menus_img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}
+.container .take_box .paint {
+  width: 100%;
+  height: 120rpx;
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+.container .take_box .paint.paint1 {
+  background-image: url("http://192.168.0.106:8080/images/menu/paintBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.container .take_box .paint.paint2 {
+  background: #fff;
+}
+.container .take_box .paint.paint2 .body-view {
+  width: 430rpx;
+  margin: auto;
+}
+.container .take_box .paint.paint2 .lineInfo {
+  position: absolute;
+  top: 50%;
+  left: 574rpx;
+  transform: translateY(-50%);
+  color: #555847;
+  font-size: 25rpx;
+  font-weight: bold;
+}
+.container .take_box .paint .paint_color {
+  flex: 1;
+  height: 100%;
+}
+.container .take_box canvas {
+  width: 100%;
+  height: calc(100% - 120rpx);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.container .take_box .paintImg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.container .take_box .text_box {
+  width: 506rpx;
+  height: 138rpx;
+  border: 1px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 4;
+}
+.container .take_box .text_box .textarea {
+  width: 442rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(120deg);
+  color: #fff;
+  text-align: center;
+  font-size: 36rpx;
+  letter-spacing: 2rpx;
+}
+.container .take_box .text_box .textarea_placeholder {
+  color: #fff;
+}
+.container .bottom_menu {
+  width: 100%;
+  height: 258rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .bottom_menu .filter_box {
+  width: 120rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 18rpx;
+}
+.container .bottom_menu .filter_box .filter_img {
+  width: 120rpx;
+  height: 120rpx;
+}
+.container .bottom_menu .filter_box .filter_name {
+  font-size: 21rpx;
+  margin-top: 30rpx;
+}
+.container .bottom_menu .three_menus_box {
+  width: 114rpx;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 70rpx;
+}
+.container .bottom_menu .three_menus_box .three_menus_img {
+  width: 114rpx;
+  height: 114rpx;
+}
+.container .bottom_menu .three_menus_box .three_menus_name {
+  font-size: 25rpx;
+  margin-top: 24rpx;
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  background-image: url("http://192.168.0.106:8080/images/menu/tip.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}

@@ -1,0 +1,145 @@
+@import "../../common/less/mlk_custom.less";
+
+.container {
+  .wh(100%, 100%);
+  padding-top: 1rpx; //解决父元素被子元素margin顶下来
+  overflow: hidden;
+
+  // 相机
+  .take_box {
+    width: 100%;
+    height: calc(100% - 258rpx);
+
+    .camera {
+      .wh(100%, 100%);
+
+
+      .logo {
+        .wh(100%, 98rpx);
+        position: absolute;
+        top: 74rpx;
+        left: 0;
+
+        .logo_img {
+          .wh(100%, 100%);
+        }
+      }
+
+
+      // 切换摄像头
+      .ccd {
+        .wh(56rpx, 49rpx);
+        position: absolute;
+        top: 166rpx;
+        right: 36rpx;
+        z-index: 9;
+
+        .ccd_img {
+          .wh(56rpx, 49rpx);
+        }
+      }
+
+
+      // 相框
+      .photo_frame {
+        .wh(100%, 100%);
+        position: relative;
+        .photo_frame_img {
+          .wh(100%,auto);
+          position: absolute;
+          bottom: 0;
+        }
+      }
+
+    }
+
+    .camera_img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+
+  // 底部操作栏
+  .bottom_menu {
+    .wh(100%, 258rpx);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .upload_img {
+      .wh(106rpx, 105rpx);
+      .background("camera/upload.png");
+      position: absolute;
+      top: 50%;
+      left: 24rpx;
+      transform: translateY(-50%);
+    }
+
+    .change_photo_frame {
+      .wh(158rpx, 158rpx);
+
+      transform: scale(.9);
+
+      &.change_photo_frame1 {}
+
+      &.change_photo_frame2 {}
+
+      &.change_photo_frame3 {}
+
+      &.change_photo_frame_active {
+        transform: scale(1.1);
+        animation: fadeIn .5s linear alternate;
+      }
+
+      &.change_photo_frame_no_active {
+        transform: scale(.9);
+      }
+    }
+
+
+    .reset {
+      width: 50%;
+      height: 100%;
+      background: red;
+    }
+
+    .next {
+      width: 50%;
+      height: 100%;
+      background: yellow;
+    }
+
+  }
+
+}
+
+
+// 提示
+.mask {
+  .wh(100%, 100%);
+  background-position: bottom center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+
+  .mask_img {
+    .wh(100%, 100%);
+  }
+}
+
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}

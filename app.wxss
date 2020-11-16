@@ -1,0 +1,11 @@
+/**app.wxss**/
+@import 'common/css/common.wxss';
+@import "common/css/animate.min.wxss";
+
+
+image {
+  display: block;
+  position: relative;
+}
+
+::-webkit-scrollbar { width: 0rpx; height: 100%;display: none; }

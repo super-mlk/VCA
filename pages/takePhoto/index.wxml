@@ -1,0 +1,71 @@
+<!--pages/template/index.wxml-->
+<view class="container animated fadeIn" wx:if="{{cameraFlag}}">
+  <!-- 相机 -->
+  <view class="take_box">
+    <camera device-position="{{dev_position}}" flash="off" binderror="error" class="camera">
+
+      <!-- logo -->
+      <cover-view class="logo">
+        <cover-image src="/images/index/logo.png" class="logo_img"></cover-image>
+      </cover-view>
+
+      <!-- 切换摄像头 -->
+      <cover-view class="ccd" catchtap="change_ccd">
+        <cover-image src="/images/camera/rotate.png" class="ccd_img" ></cover-image>
+      </cover-view>
+
+
+      <!-- 相框 -->
+      <cover-view class="photo_frame">
+        <cover-image src="{{photo_frame_img}}" class="photo_frame_img" />
+      </cover-view>
+
+    </camera>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom_menu">
+
+    <!-- 上传 -->
+    <view class="upload_img" catchtap="upload_img_video"></view>
+
+    <!-- 切换相框 -->
+    <block wx:for="{{photo_frame_list}}" wx:key="index">
+      <image src="{{item.active ? item.img_active :item.img}}"
+        class="change_photo_frame change_photo_frame{{item.id}} {{item.active ? 'change_photo_frame_active' : 'change_photo_frame_no_active'}}"
+        catchtap="change_photo_frame" data-id="{{item.id}}" bindtouchstart="handleTouchStart"
+        bindtouchend="handleTouchEnd" bindlongpress="handleLongPress">
+      </image>
+    </block>
+
+  </view>
+
+
+
+  <canvas canvas-id='canvas-demo' disable-scroll='true'
+    style='width:{{cavansWidth}}px;height:{{cavansHeight}}px;position: absolute;left:100000rpx;pointer-events: none;z-index:-1;'></canvas>
+</view>
+
+
+
+<!-- 拍照完成 -->
+
+<view class="container animated fadeIn" wx:else>
+  <view class="take_box">
+    <image src="{{resultImg}}" class="camera_img" />
+  </view>
+  <view class="bottom_menu">
+    <view class="reset" catchtap="reset_take">重拍</view>
+    <view class="next" catchtap="next_menu">下一步</view>
+  </view>
+</view>
+
+
+
+
+
+
+<!-- 提示 -->
+<cover-view class="mask" wx:if="{{maskFlag}}" catchtap="tipBtn">
+  <cover-image src="/images/camera/take_tip.png" class="mask_img"></cover-image>
+</cover-view>

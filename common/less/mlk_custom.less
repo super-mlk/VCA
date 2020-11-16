@@ -1,0 +1,254 @@
+// 封装的less代码--start
+
+// 统一的文字颜色 --start
+@h1Color : #9e6c20;
+@h2Color : #b08233;
+@h3Color : #96641b;
+@h4Color : #003c8a;
+@h5Color : #8a8a8a;
+@h6Color : #003c89;
+// 统一的文字颜色 --end
+// 统一边框颜色 --start  
+@h1Color: #cfb48f;
+// 统一边框颜色 --end 
+// 分割线颜色
+@hrColor: #ccaf7c;
+@barColor: #e0b753;
+@pcFontColr: #9f6c20;
+
+// 字体统一 --start
+@h2FontSize: 32rpx;
+@h3FontSize: 30rpx;
+@h4FontSize: 24rpx;
+@h5FontSize: 20rpx;
+@h6FontSize: 26rpx;
+// 字体统一 --end 
+
+// 随机数
+// @mathRom:~`Math.random()`;
+
+.smallFontSize {
+    font-size: @h5FontSize;
+}
+
+.wh(@width, @height) {
+    width: @width;
+    height: @height;
+}
+
+// 定位左右居中
+.position_left_right(@width, @top) {
+    margin-left: -(@width / 2);
+    position: absolute;
+    left: 50%;
+    top: @top;
+}
+
+.position(@top, @left, @type: absolute) {
+    position: @type;
+    top: @top;
+    left: @left;
+}
+ 
+// 定位设置宽高
+.position_box(@top, @bottom, @left: 0, @right: 0) {
+    position: absolute;
+    top: @top;
+    bottom: @bottom;
+    left: @left;
+    right: @right; 
+}
+
+
+@publicUrl:"http://192.168.0.106:8080/images/";  //本地
+@MathRom:37;
+
+.background(@background) {
+    // 网络
+    // background-image: url("@{publicUrl}@{background}?v=@{MathRom}");
+    background-image: url("@{publicUrl}@{background}");
+    // 本地
+    // background-image: url("http://192.168.11.6:5000/images/@{background}?v=15");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.mask_image(@background){
+    -webkit-mask-image:url("@{publicUrl}@{background}?v=@{MathRom}");
+    // -webkit-mask-image:url("http://192.168.11.6:5000/images/@{background}?v=15");
+    -webkit-mask-size:100% 100%;
+    overflow: hidden;
+}
+
+// 定位垂直居中
+.chuiCenter {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+// flex 水平居中
+.flexVerHorizontally {
+    display: flex;
+    align-items: center;
+}
+
+// flex 水平垂直居中
+.flexHVCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// flex 垂直居中左右控制
+.flex_left_right_custom(@jc: center) {
+    display: flex;
+    align-items: center;
+    justify-content: @jc;
+}
+
+// 文本垂直居中
+.textChuiCenterLineHeight(@lineHeight) {
+    text-align: center;
+    line-height: @lineHeight;
+}
+
+// 滤镜  (黑白图片)
+.grayscale {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+
+    filter: grayscale(100%);
+
+    filter: gray;
+}
+
+// 文字渐变
+.text_gradients(@left, @right) {
+    background: linear-gradient(to right, @left, @right);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+// 背景渐变 (从左到右)
+.bg_gradients(@left, @right) {
+    background-image: linear-gradient(to right, @left , @right);
+}
+
+// 背景渐变 (从上到下)
+.bg_gradients2(@top, @bottom) {
+    background-image: linear-gradient(@top , @bottom);
+}
+
+i {
+    display: block;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.hideop {
+    opacity: 0;
+}
+
+.showop {
+    opacity: 1;
+}
+
+/* 动画 */
+.ani_light(@time:3s){
+    @keyframes ani_light {
+        0% {
+            transform: skew(-45deg) translate(-100%, 0);
+        }
+    
+        100% {
+            transform: skew(-45deg) translate(100%, 0);
+            opacity: .5;
+        }
+    }
+    animation: ani_light @time ease-in-out infinite;
+}
+
+.ani_light_after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 239, 177, 1)20%, rgba(255, 255, 255, 0)20%);
+    .ani_light;
+}
+
+
+// 抽锦鲤的动画
+.ani_shake{
+    @keyframes shake1 {
+        // 0% {
+        //     transform: translateY(10rpx);
+        // }
+    
+        // 10% {
+        //     transform: translateY(0);
+        // } 
+    
+        // 20% {
+        //     transform: translateY(6rpx);
+        // } 
+     
+        // 30% {
+        //     transform: translateY(0rpx);
+        // }
+    
+        // 80% {
+        //     transform: translateY(0rpx);
+        // }
+    
+        // 100% {
+        //     transform: translateY(0rpx);
+        // }
+
+        0%{
+            transform: scale(1);
+        }
+
+        100%{
+            transform: scale(1.1);
+        }
+    }
+
+    animation: shake1 1s linear infinite alternate;
+}
+
+
+
+// @font-face{
+//     font-family: "思源黑体";
+//     src: url('/assets/fonts/SourceHanSansCN-Regular.otf'); /* IE9 */
+// } 
+
+// input::-webkit-input-placeholder,
+// textarea::-webkit-input-placeholder {
+//     color: #aaa9aa;
+//     font-size: .20rem;
+//     letter-spacing: .04rem;
+//     padding-top: .02rem;
+//     line-height: normal ;
+//     font-family: "思源黑体";
+// }
+
+// 封装的less代码--start

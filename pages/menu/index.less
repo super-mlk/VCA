@@ -1,0 +1,210 @@
+@import "../../common/less/mlk_custom.less";
+
+.container {
+  .wh(100%, 100%);
+  padding-top: 1rpx; //解决父元素被子元素margin顶下来
+
+  .take_box {
+    width: 100%;
+    height: calc(100% - 258rpx);
+
+    .result_img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .filterImg {
+      .wh(100%, 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+
+    // 四个操作
+    .menus {
+      .wh(50rpx, auto);
+      position: absolute;
+      top: 172rpx;
+      right: 30rpx;
+      z-index: 999;
+
+      .menus_img {
+        .wh(50rpx, 50rpx);
+        margin-bottom: 10rpx;
+
+        // &.menus_img1 {
+        //   .background("menu/i1.png");
+        // }
+
+        // &.menus_img2 {
+        //   .background("menu/i2.png");
+        // }
+
+        // &.menus_img3 {
+        //   .background("menu/i3.png");
+        // }
+
+        // &.menus_img4 {
+        //   .background("menu/i4.png");
+        // }
+
+      }
+    }
+
+
+    // 色板 和 大小
+    .paint {
+      .wh(100%, 120rpx);
+      position: absolute;
+      bottom: 0;
+      z-index: 9;
+
+      &.paint1 {
+        .background("menu/paintBg.png");
+      }
+
+      &.paint2 {
+        background: #fff;
+
+        .body-view {
+          width: 430rpx;
+          margin: auto;
+        }
+
+        .lineInfo {
+          position: absolute;
+          top: 50%;
+          left: 574rpx;
+          transform: translateY(-50%);
+          color: #555847;
+          font-size: 25rpx;
+          font-weight: bold;
+        }
+      }
+
+      display: flex;
+      align-items: center;
+
+      .paint_color {
+        flex: 1;
+        height: 100%;
+      }
+    }
+
+
+    // 画图的canvas
+    canvas {
+      width: 100%;
+      height: calc(100% - 120rpx);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    .paintImg {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .text_box {
+      width: 506rpx;
+      height: 138rpx;
+      border: 1px solid red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      z-index: 4;
+
+      .textarea {
+        width: 442rpx;
+        height: 40rpx;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(120deg);
+        color: #fff;
+        text-align: center;
+        font-size: 36rpx;
+        letter-spacing: 2rpx;
+      }
+
+      .textarea_placeholder {
+        color: #fff;
+      }
+    }
+
+  }
+
+
+  // 底部操作栏
+  .bottom_menu {
+    .wh(100%, 258rpx);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .filter_box {
+      width: 120rpx;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 18rpx;
+
+      .filter_img {
+        .wh(120rpx, 120rpx);
+
+      }
+
+      .filter_name {
+        font-size: 21rpx;
+        margin-top: 30rpx;
+      }
+    }
+
+
+    .three_menus_box {
+      .wh(114rpx, auto);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-right: 70rpx;
+
+      .three_menus_img {
+        .wh(114rpx, 114rpx);
+      }
+
+      .three_menus_name {
+        font-size: 25rpx;
+        margin-top: 24rpx;
+      }
+    }
+
+  }
+}
+
+
+// 提示
+.mask {
+  .wh(100%, 100%);
+  .background("menu/tip.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
